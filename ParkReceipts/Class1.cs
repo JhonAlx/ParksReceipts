@@ -91,6 +91,7 @@ namespace ParkReceipts
                         IWebElement qty = this.driver.FindElement(By.Name("p_qty[]"));
                         IWebElement item = this.driver.FindElement(By.Name("p_scnt[]"));
                         IWebElement cost = this.driver.FindElement(By.Name("p_price[]"));
+
                         dateTextBox.Clear();
                         timeTextBox.Clear();
                         businessTextBox.Clear();
@@ -99,6 +100,7 @@ namespace ParkReceipts
                         costTextBox.Clear();
                         tipTextBox.Clear();
                         paymentTextBox.Clear();
+
                         dateTextBox.SendKeys(sheet.Cells[i, 1].Text);
                         timeTextBox.SendKeys(sheet.Cells[i, 2].Text);
                         businessTextBox.SendKeys(sheet.Cells[i, 3].Text);
@@ -110,6 +112,7 @@ namespace ParkReceipts
                         qty.SendKeys(sheet.Cells[i, 9].Text);
                         item.SendKeys(sheet.Cells[i, 10].Text);
                         cost.SendKeys(sheet.Cells[i, 11].Text);
+
                         this.Log(string.Concat("Loaded data on row ", i - 1));
                         submitBtn.Click();
                         Thread.Sleep(1000);
